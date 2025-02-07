@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phoebe Huang - Personal Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif; /* Rounded, smooth font */
+    }
+
+    body {
+      background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
+      color: #002FA7; /* Klein Blue */
+      line-height: 1.8;
+      font-size: 1.2rem; /* Increased font size */
+      overflow-x: hidden;
+      padding-bottom: 60px;
+      border: 20px solid transparent;
+      border-image: url('https://example.com/flower-border.png') 30 round; /* Replace with actual flower border image URL */
+    }
+
+    /* Navigation Bar Styles */
+    nav {
+      background-color: #FF69B4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin-left: 20px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #FFD700;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .nav-links.active {
+        display: block;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* General Styles for the Page */
+    h1, h3 {
+      text-align: center;
+      color: #FF69B4;
+    }
+
+    button {
+      background-color: #FFB6C1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #FF69B4;
+      transform: scale(1.1);
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .header {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .mid, .box {
+      margin: 50px auto;
+      text-align: center;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 10px 0;
+      font-size: 1.4rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 182, 193, 0.4);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+
+    function enlargeImage(img) {
+      const src = img.src;
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.background = 'rgba(0, 0, 0, 0.8)';
+      overlay.style.display = 'flex';
+      overlay.style.alignItems = 'center';
+      overlay.style.justifyContent = 'center';
+      overlay.style.cursor = 'pointer';
+
+      const imgElement = document.createElement('img');
+      imgElement.src = src;
+      imgElement.style.maxWidth = '90%';
+      imgElement.style.maxHeight = '90%';
+      imgElement.style.borderRadius = '15px';
+
+      overlay.appendChild(imgElement);
+      document.body.appendChild(overlay);
+
+      overlay.onclick = function() {
+        document.body.removeChild(overlay);
+      };
+    }
+  </script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">
+        <h1>Phoebe Huang 👩‍💻</h1>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links">
+        <a href="me.html">🏠 Home</a>
+        <a href="quiz.html">❓ Quiz</a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="container header">
+        <h1>Hello my name is Phoebe Huang 👋</h1>
+        <h3>I am an 11th-grade student 📚</h3>
+        <button>About Me 💬</button>
+    </div>
+
+    <!-- Mid Section -->
+    <div class="container mid">
+        <h1>My Hobbies 🎶</h1>
+        <ul>
+            <li>🎧 Listen to music</li>
+            <li>📚 Read</li>
+            <li>🏸 Play badminton</li>
+            <li>🛝 Stay in park</li>
+            <li>🎨 Draw</li>
+        </ul>
+    </div>
+
+    <!-- End Section -->
+    <div class="container end">
+        <div class="box">
+            <h1>My Life Programming 📺</h1>
+            <p>During my free time, I love to watch variety shows. 🍿</p>
+            <a href="https://www.youtube.com/playlist?list=PLhayK-qLSbiYEETWYz6l9ByTymq62XV1I" target="_blank">Watch my favorite playlist on YouTube 📺</a>
+        </div>
+
+        <div class="box">
+            <h1>My Pet 🐕‍🦺</h1>
+            <p>I am a sister of a dog, Diandian. My mom and little brother found her and brought her home. ❤️</p>
+            <img src="/Diandian1.png" alt="Diandian" width="200" height="200" onclick="enlargeImage(this)">
+            <img src="/IMG_1920.png" alt="Phoebe's Life" width="200" height="200" onclick="enlargeImage(this)">
+            <img src="/IMG_1932.png" alt="Phoebe's Life" width="200" height="200" onclick="enlargeImage(this)">
+            <img src="/IMG_8790.png" alt="Phoebe's Life" width="200" height="200" onclick="enlargeImage(this)">
+            <img src="/IMG_1904.png" alt="Phoebe's Life" width="200" height="200" onclick="enlargeImage(this)">
+        </div>
+
+        <div class="box">
+            <h1>Music 🎶</h1>
+            <p>🎵 Taylor Swift 🎤</p>
+            <img src="/IMG_0492.png" alt="Phoebe's Life" width="200" height="200" onclick="enlargeImage(this)">
+            <img src="/IMG_0488.png" alt="Phoebe's Life" width="200" height="200" onclick="enlargeImage(this)">
+            <img src="/IMG_0429.png" alt="Phoebe's Life" width="200" height="200" onclick="enlargeImage(this)">
+            <p>|◁◁ Ⅱ ■ ▷▷|</p>
+
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1fzAuUVbzlhZ1lJAx9PtY6?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/10eBRyImhfqVvkiVEGf0N0?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0VE4kBnHJUgtMf0dy6DRmW?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+    <footer>
+      <p>Copyright &copy; 2025 Phoebe Huang. All Rights Reserved. 📅</p>
+    </footer>
+</body>
+</html>
